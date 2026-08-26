@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Aberto</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Mapa Aberto</h1>
+    <nav>
+      <a href="#destinos">Destinos</a>
+      <a href="#contribua">Contribua</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="destinos">
+      <h2>Destinos em destaque</h2>
+      <p>O Mapa Aberto é um blog de viagens com relatos, dicas e roteiros de destinos pelo Brasil e pelo mundo.</p>
+
+      <img src="assets/images/mapa.svg" alt="Ilustração de um mapa com três pontos marcados e ligados por linhas, representando destinos de viagem">
+
+      <ul>
+        <li>Lençóis Maranhenses, MA</li>
+        <li>Chapada Diamantina, BA</li>
+        <li>Vale do Elqui, Chile</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>Destino</th>
+          <th>Custo médio por dia</th>
+        </tr>
+        <tr>
+          <td>Lençóis Maranhenses</td>
+          <td>R$ 250</td>
+        </tr>
+        <tr>
+          <td>Chapada Diamantina</td>
+          <td>R$ 220</td>
+        </tr>
+        <tr>
+          <td>Vale do Elqui</td>
+          <td>US$ 60</td>
+        </tr>
+      </table>
+
+      <p>Fonte: <a href="https://www.gov.br/turismo/pt-br" target="_blank" rel="noopener noreferrer">Ministério do Turismo</a></p>
+    </section>
+
+    <section id="contribua">
+      <h2>Conte a sua viagem</h2>
+
+      <form>
+        <fieldset>
+          <legend>Seus dados</legend>
+
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sobre a viagem</legend>
+
+          <label for="destino">Continente do destino</label>
+          <select id="destino" name="destino">
+            <option value="america-sul">América do Sul</option>
+            <option value="europa">Europa</option>
+            <option value="asia">Ásia</option>
+            <option value="africa">África</option>
+          </select>
+
+          <label for="dias">Duração da viagem (dias)</label>
+          <input type="number" id="dias" name="dias" min="1" max="90">
+
+          <label for="relato">Seu relato</label>
+          <textarea id="relato" name="relato" rows="4"></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar relato</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mapa Aberto</p>
+  </footer>
+
+</body>
+</html>

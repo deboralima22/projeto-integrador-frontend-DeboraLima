@@ -30,3 +30,5 @@ cd projeto-integrador-frontend-DeboraLima
 Projeto desenvolvido por Débora Lima como parte do Projeto Integrador da disciplina de Desenvolvimento Front-end para Web.
 
 GitHub: [@deboralima22](https://github.com/deboralima22)
+
+Revisão feita por William Silva no dia 27/08/2026 17h44: Débora cumpriu os requisitos propostos, com uma interface muito bonita, bem organizada e agradável de visualizar. O projeto apresenta uma boa aplicação dos conteúdos trabalhados em Front-end e uma proposta clara. 10/10

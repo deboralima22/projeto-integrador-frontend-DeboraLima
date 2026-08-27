@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -18,75 +19,90 @@
 
   <main>
 
-    <section id="destinos">
-      <h2>Destinos em destaque</h2>
-      <p>O Mapa Aberto é um blog de viagens com relatos, dicas e roteiros de destinos pelo Brasil e pelo mundo.</p>
+```
+<section id="destinos">
+  <h2>Destinos em destaque</h2>
+  <p>O Mapa Aberto é um blog de viagens com relatos, dicas e roteiros de destinos pelo Brasil e pelo mundo.</p>
 
-      <img src="assets/images/mapa.svg" alt="Ilustração de um mapa com três pontos marcados e ligados por linhas, representando destinos de viagem">
+  <img src="assets/images/mapa.svg" alt="Ilustração de um mapa com três pontos marcados e ligados por linhas, representando destinos de viagem">
 
-      <ul>
-        <li>Lençóis Maranhenses, MA</li>
-        <li>Chapada Diamantina, BA</li>
-        <li>Vale do Elqui, Chile</li>
-      </ul>
+  <ul>
+    <li>Lençóis Maranhenses, MA</li>
+    <li>Chapada Diamantina, BA</li>
+    <li>Vale do Elqui, Chile</li>
+  </ul>
 
-      <table>
-        <tr>
-          <th>Destino</th>
-          <th>Custo médio por dia</th>
-        </tr>
-        <tr>
-          <td>Lençóis Maranhenses</td>
-          <td>R$ 250</td>
-        </tr>
-        <tr>
-          <td>Chapada Diamantina</td>
-          <td>R$ 220</td>
-        </tr>
-        <tr>
-          <td>Vale do Elqui</td>
-          <td>US$ 60</td>
-        </tr>
-      </table>
+  <table>
+    <tr>
+      <th>Destino</th>
+      <th>Custo médio por dia</th>
+    </tr>
+    <tr>
+      <td>Lençóis Maranhenses</td>
+      <td>R$ 250</td>
+    </tr>
+    <tr>
+      <td>Chapada Diamantina</td>
+      <td>R$ 220</td>
+    </tr>
+    <tr>
+      <td>Vale do Elqui</td>
+      <td>US$ 60</td>
+    </tr>
+  </table>
 
-      <p>Fonte: <a href="https://www.gov.br/turismo/pt-br" target="_blank" rel="noopener noreferrer">Ministério do Turismo</a></p>
-    </section>
+  <p>Fonte: <a href="https://www.gov.br/turismo/pt-br" target="_blank" rel="noopener noreferrer">Ministério do Turismo</a></p>
 
-    <section id="contribua">
-      <h2>Conte a sua viagem</h2>
+  <h2>Conheça um pouco mais</h2>
 
-      <form>
-        <fieldset>
-          <legend>Seus dados</legend>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/ZZ0jkAadrTc"
+      title="Lençóis Maranhenses - Brasil 4K - Cinematic Travel Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required>
+</section>
 
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required>
-        </fieldset>
+<section id="contribua">
+  <h2>Conte a sua viagem</h2>
 
-        <fieldset>
-          <legend>Sobre a viagem</legend>
+  <form>
+    <fieldset>
+      <legend>Seus dados</legend>
 
-          <label for="destino">Continente do destino</label>
-          <select id="destino" name="destino">
-            <option value="america-sul">América do Sul</option>
-            <option value="europa">Europa</option>
-            <option value="asia">Ásia</option>
-            <option value="africa">África</option>
-          </select>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
 
-          <label for="dias">Duração da viagem (dias)</label>
-          <input type="number" id="dias" name="dias" min="1" max="90">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+    </fieldset>
 
-          <label for="relato">Seu relato</label>
-          <textarea id="relato" name="relato" rows="4"></textarea>
-        </fieldset>
+    <fieldset>
+      <legend>Sobre a viagem</legend>
 
-        <button type="submit">Enviar relato</button>
-      </form>
-    </section>
+      <label for="destino">Continente do destino</label>
+      <select id="destino" name="destino">
+        <option value="america-sul">América do Sul</option>
+        <option value="europa">Europa</option>
+        <option value="asia">Ásia</option>
+        <option value="africa">África</option>
+      </select>
+
+      <label for="dias">Duração da viagem (dias)</label>
+      <input type="number" id="dias" name="dias" min="1" max="90">
+
+      <label for="relato">Seu relato</label>
+      <textarea id="relato" name="relato" rows="4"></textarea>
+    </fieldset>
+
+    <button type="submit">Enviar relato</button>
+  </form>
+</section>
+```
 
   </main>
 

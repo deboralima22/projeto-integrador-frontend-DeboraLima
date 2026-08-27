@@ -1,0 +1,124 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mapaTitle mapaDesc">
+  <title id="mapaTitle">Mapa Aberto — roteiro de viagem</title>
+  <desc id="mapaDesc">Ilustração de mapa em estilo caderno de viagem colorido, com três destinos numerados e ligados por uma rota pontilhada: Lençóis Maranhenses, Chapada Diamantina e Vale do Elqui.</desc>
+
+  <defs>
+    <filter id="paper" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.14  0 0 0 0 0.1  0 0 0 0.04 0"/>
+    </filter>
+    <linearGradient id="oceanWash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BFDCD6"/>
+      <stop offset="100%" stop-color="#9FC7C0"/>
+    </linearGradient>
+    <linearGradient id="duna" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0C879"/>
+      <stop offset="100%" stop-color="#E0A94E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo: papel envelhecido -->
+  <rect x="0" y="0" width="900" height="520" fill="#F4EEE0"/>
+
+  <!-- Mar/água ao redor das massas terrestres -->
+  <rect x="30" y="30" width="840" height="460" fill="url(#oceanWash)" opacity="0.55"/>
+  <rect x="0" y="0" width="900" height="520" filter="url(#paper)" opacity="0.45"/>
+
+  <!-- Moldura fina, dupla, estilo atlas antigo -->
+  <rect x="24" y="24" width="852" height="472" fill="none" stroke="#1F3B36" stroke-width="1.4"/>
+  <rect x="30" y="30" width="840" height="460" fill="none" stroke="#1F3B36" stroke-width="0.6" opacity="0.6"/>
+
+  <!-- Cabeçalho -->
+  <g>
+    <rect x="60" y="44" width="330" height="4" fill="#C1512B"/>
+    <text x="60" y="80" font-family="Georgia, 'Times New Roman', serif" font-size="32" letter-spacing="1.5" fill="#1F3B36">Mapa Aberto</text>
+    <text x="60" y="102" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#7A6A4E">um roteiro entre o litoral e as montanhas</text>
+  </g>
+
+  <!-- Meridianos/paralelos discretos -->
+  <g stroke="#1F3B36" stroke-width="0.4" opacity="0.15">
+    <line x1="60" y1="150" x2="840" y2="150"/>
+    <line x1="60" y1="250" x2="840" y2="250"/>
+    <line x1="60" y1="350" x2="840" y2="350"/>
+    <line x1="60" y1="450" x2="840" y2="450"/>
+    <line x1="220" y1="130" x2="220" y2="470"/>
+    <line x1="420" y1="130" x2="420" y2="470"/>
+    <line x1="620" y1="130" x2="620" y2="470"/>
+  </g>
+
+  <!-- Massa continental: Brasil -->
+  <path d="M470,150 Q545,128 610,155 Q670,180 680,245 Q688,300 665,355 Q645,405 600,435 Q545,462 490,448 Q445,436 425,392 Q405,340 415,280 Q422,215 470,150 Z"
+        fill="#DCC791" stroke="#1F3B36" stroke-width="1.8"/>
+  <!-- relevo colorido: serras (verde-oliva) -->
+  <g fill="none" stroke="#6E7F4B" stroke-width="2" opacity="0.55" stroke-linecap="round">
+    <path d="M450,220 Q500,203 540,225"/>
+    <path d="M460,270 Q510,253 560,270"/>
+    <path d="M500,340 Q550,323 590,340"/>
+    <path d="M470,390 Q510,376 545,392"/>
+  </g>
+  <!-- vegetação pontilhada -->
+  <g fill="#5B7A45" opacity="0.5">
+    <circle cx="490" cy="235" r="2"/><circle cx="520" cy="245" r="1.6"/><circle cx="550" cy="255" r="2"/>
+    <circle cx="610" cy="260" r="1.8"/><circle cx="590" cy="310" r="2"/><circle cx="530" cy="410" r="1.8"/>
+    <circle cx="480" cy="330" r="1.6"/><circle cx="640" cy="320" r="1.8"/>
+  </g>
+  <text x="640" y="465" text-anchor="middle" font-family="Georgia, serif" font-size="12" letter-spacing="2" fill="#7A6A4E">BRASIL</text>
+
+  <!-- Massa continental: Chile -->
+  <path d="M250,210 Q268,225 262,270 Q258,320 250,370 Q242,415 226,450 Q208,420 204,370 Q200,310 212,260 Q222,225 250,210 Z"
+        fill="#DCC791" stroke="#1F3B36" stroke-width="1.8"/>
+  <g fill="none" stroke="#6E7F4B" stroke-width="1.6" opacity="0.5" stroke-linecap="round">
+    <path d="M222,250 Q235,238 248,250"/>
+    <path d="M218,320 Q230,308 242,320"/>
+    <path d="M215,390 Q226,378 238,390"/>
+  </g>
+  <g fill="#5B7A45" opacity="0.5">
+    <circle cx="230" cy="260" r="1.6"/><circle cx="218" cy="440" r="1.6"/><circle cx="238" cy="380" r="1.6"/>
+  </g>
+  <text x="228" y="463" text-anchor="middle" font-family="Georgia, serif" font-size="12" letter-spacing="2" fill="#7A6A4E">CHILE</text>
+
+  <!-- Rota pontilhada -->
+  <path d="M500,215 C540,250 560,270 555,300 C500,315 350,320 260,300"
+        fill="none" stroke="#C1512B" stroke-width="2" stroke-dasharray="1,8" stroke-linecap="round"/>
+
+  <!-- Destino 1: Lençóis Maranhenses — dunas douradas -->
+  <g transform="translate(500,215)">
+    <circle r="18" fill="url(#duna)" stroke="#1F3B36" stroke-width="1.6"/>
+    <path d="M-9,4 Q-3,-6 3,2 Q7,-3 10,3" fill="none" stroke="#7A5A22" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="-6" cy="-7" r="3.4" fill="#BFDCD6" stroke="#1F3B36" stroke-width="0.8"/>
+  </g>
+  <text x="524" y="200" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1F3B36">Lençóis Maranhenses</text>
+  <text x="524" y="220" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#7A6A4E">Maranhão — dunas e lagoas</text>
+
+  <!-- Destino 2: Chapada Diamantina — serra verde -->
+  <g transform="translate(555,300)">
+    <circle r="18" fill="#93A85C" stroke="#1F3B36" stroke-width="1.6"/>
+    <path d="M-10,6 L-3,-7 L2,-1 L6,-8 L11,6 Z" fill="#1F3B36" opacity="0.75"/>
+    <path d="M5,-8 L7,-4 L3,-4 Z" fill="#BFDCD6"/>
+  </g>
+  <text x="579" y="285" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1F3B36">Chapada Diamantina</text>
+  <text x="579" y="305" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#7A6A4E">Bahia — serras e cachoeiras</text>
+
+  <!-- Destino 3: Vale do Elqui — céu noturno -->
+  <g transform="translate(260,300)">
+    <circle r="18" fill="#3B4B6B" stroke="#1F3B36" stroke-width="1.6"/>
+    <g fill="#F0C879">
+      <path d="M0,-9 L1.9,-3.4 7.7,-3.2 3.1,0.4 4.9,5.9 0,2.4 -4.9,5.9 -3.1,0.4 -7.7,-3.2 -1.9,-3.4 Z" transform="scale(0.55)"/>
+      <circle cx="-8" cy="4" r="1"/>
+      <circle cx="7" cy="-6" r="1"/>
+    </g>
+  </g>
+  <text x="122" y="332" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1F3B36">Vale do Elqui</text>
+  <text x="152" y="352" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#7A6A4E">Chile — céus mais límpidos do mundo</text>
+
+  <!-- Rosa dos ventos -->
+  <g transform="translate(790,410)">
+    <circle r="28" fill="#F4EEE0" stroke="#1F3B36" stroke-width="1.2"/>
+    <path d="M0,-21 L4.5,0 L0,21 L-4.5,0 Z" fill="#C1512B"/>
+    <path d="M-21,0 L0,4.5 L21,0 L0,-4.5 Z" fill="#1F3B36" opacity="0.55"/>
+    <text x="0" y="-34" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1F3B36">N</text>
+  </g>
+
+  <!-- Legenda inferior -->
+  <text x="60" y="470" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#7A6A4E">registros de viagem, um destino por vez</text>
+</svg>

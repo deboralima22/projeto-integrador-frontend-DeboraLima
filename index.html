@@ -1,108 +1,173 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa Aberto</title>
+  <!-- AULA 6: reset.css vem ANTES do style.css, para o style.css poder sobrescrever o reset -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Mapa Aberto</h1>
-    <nav>
+  <!-- AULA 7: .topo (flex) = título + menu; .menu (flex) = links lado a lado -->
+  <header class="topo">
+    <h1 id="titulo-principal">Mapa Aberto</h1>
+    <nav class="menu" aria-label="Navegação principal">
       <a href="#destinos">Destinos</a>
+      <a href="#roteiros">Roteiros</a>
+      <a href="#tour">Tour</a>
       <a href="#contribua">Contribua</a>
+      <a href="pratica-canvas-svg-simples.html">Prática HTML5</a>
     </nav>
   </header>
 
   <main>
 
-```
-<section id="destinos">
-  <h2>Destinos em destaque</h2>
-  <p>O Mapa Aberto é um blog de viagens com relatos, dicas e roteiros de destinos pelo Brasil e pelo mundo.</p>
+    <section id="destinos">
+      <h2>Destinos em destaque</h2>
+      <p>O Mapa Aberto é um blog de viagens com relatos, dicas e roteiros de destinos pelo Brasil e pelo mundo.</p>
 
-  <img src="assets/images/mapa.svg" alt="Ilustração de um mapa com três pontos marcados e ligados por linhas, representando destinos de viagem">
+      <img class="mapa" src="assets/images/mapa.svg" alt="Ilustração de um mapa com três pontos marcados e ligados por linhas, representando destinos de viagem">
 
-  <ul>
-    <li>Lençóis Maranhenses, MA</li>
-    <li>Chapada Diamantina, BA</li>
-    <li>Vale do Elqui, Chile</li>
-  </ul>
+      <ul>
+        <li>Lençóis Maranhenses, MA</li>
+        <li>Chapada Diamantina, BA</li>
+        <li>Vale do Elqui, Chile</li>
+      </ul>
 
-  <table>
-    <tr>
-      <th>Destino</th>
-      <th>Custo médio por dia</th>
-    </tr>
-    <tr>
-      <td>Lençóis Maranhenses</td>
-      <td>R$ 250</td>
-    </tr>
-    <tr>
-      <td>Chapada Diamantina</td>
-      <td>R$ 220</td>
-    </tr>
-    <tr>
-      <td>Vale do Elqui</td>
-      <td>US$ 60</td>
-    </tr>
-  </table>
+      <table>
+        <tr>
+          <th>Destino</th>
+          <th>Custo médio por dia</th>
+        </tr>
+        <tr>
+          <td>Lençóis Maranhenses</td>
+          <td>R$ 250</td>
+        </tr>
+        <tr>
+          <td>Chapada Diamantina</td>
+          <td>R$ 220</td>
+        </tr>
+        <tr>
+          <td>Vale do Elqui</td>
+          <td>US$ 60</td>
+        </tr>
+      </table>
 
-  <p>Fonte: <a href="https://www.gov.br/turismo/pt-br" target="_blank" rel="noopener noreferrer">Ministério do Turismo</a></p>
+      <p>Fonte: <a href="https://www.gov.br/turismo/pt-br" target="_blank" rel="noopener noreferrer">Ministério do Turismo</a></p>
 
-  <h2>Conheça um pouco mais</h2>
+      <h2>Conheça um pouco mais</h2>
 
-  <div class="video-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/ZZ0jkAadrTc"
-      title="Lençóis Maranhenses - Brasil 4K - Cinematic Travel Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/ZZ0jkAadrTc"
+          title="Lençóis Maranhenses - Brasil 4K - Cinematic Travel Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-</section>
+    </section>
 
-<section id="contribua">
-  <h2>Conte a sua viagem</h2>
+    <!-- AULA 7: seção em CSS Grid com cards (primeiro, pares e último estilizados por pseudo-classes estruturais) -->
+    <section id="roteiros">
+      <h2>Roteiros em cards</h2>
 
-  <form>
-    <fieldset>
-      <legend>Seus dados</legend>
+      <ul class="grade-destinos">
+        <li class="card destaque">
+          <h3>Lençóis Maranhenses</h3>
+          <p>Dunas e lagoas de água doce. Melhor época: junho a setembro.</p>
+        </li>
+        <li class="card">
+          <h3>Chapada Diamantina</h3>
+          <p>Cachoeiras, grutas e trilhas para todos os níveis.</p>
+        </li>
+        <li class="card">
+          <h3>Vale do Elqui</h3>
+          <p>Vinhedos e um dos céus mais limpos do mundo para ver estrelas.</p>
+        </li>
+        <li class="card">
+          <h3>Jalapão</h3>
+          <p>Fervedouros, dunas douradas e cachoeiras no Tocantins.</p>
+        </li>
+        <li class="card">
+          <h3>Fernando de Noronha</h3>
+          <p>Praias, mergulho e vida marinha em Pernambuco.</p>
+        </li>
+        <li class="card">
+          <h3>Deserto do Atacama</h3>
+          <p>Gêiseres, salares e paisagens lunares no Chile.</p>
+        </li>
+      </ul>
+    </section>
 
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" required>
+    <!-- AULA 4: seção de mídia (vídeo próprio com fallback de formatos) -->
+    <section id="tour">
+      <h2>Tour guiado pelo Mapa Aberto</h2>
 
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
-    </fieldset>
+      <!--
+        preload="none": o vídeo está abaixo da dobra da página e o visitante
+        pode nem rolar até aqui. Com "none" o navegador NÃO baixa nada até o
+        clique em play (só carrega o poster), economizando dados e acelerando
+        o carregamento inicial. ("metadata" baixaria só duração/dimensões;
+        "auto" baixaria o vídeo inteiro de antemão.)
 
-    <fieldset>
-      <legend>Sobre a viagem</legend>
+        Ordem dos <source>: WebM/VP9 primeiro (melhor compressão = arquivo
+        menor), MP4/H.264 depois como fallback, pois é o formato com
+        compatibilidade quase universal. O navegador usa o PRIMEIRO que
+        conseguir reproduzir.
+      -->
+      <video
+        id="video-tour"
+        class="video-tour"
+        controls
+        preload="none"
+        poster="assets/media/poster-tour.jpg"
+        width="640"
+        height="360">
+        <source src="assets/media/tour-guiado.webm" type="video/webm; codecs=vp9">
+        <source src="assets/media/tour-guiado.mp4" type="video/mp4; codecs=avc1.42E01E">
+        <track kind="subtitles" src="assets/media/legendas-tour.vtt" srclang="pt-BR" label="Português" default>
+        <p>Seu navegador não suporta vídeo HTML5. <a href="assets/media/tour-guiado.mp4">Baixe o vídeo em MP4</a>.</p>
+      </video>
+    </section>
 
-      <label for="destino">Continente do destino</label>
-      <select id="destino" name="destino">
-        <option value="america-sul">América do Sul</option>
-        <option value="europa">Europa</option>
-        <option value="asia">Ásia</option>
-        <option value="africa">África</option>
-      </select>
+    <section id="contribua">
+      <h2>Conte a sua viagem</h2>
 
-      <label for="dias">Duração da viagem (dias)</label>
-      <input type="number" id="dias" name="dias" min="1" max="90">
+      <form>
+        <fieldset>
+          <legend>Seus dados</legend>
 
-      <label for="relato">Seu relato</label>
-      <textarea id="relato" name="relato" rows="4"></textarea>
-    </fieldset>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
 
-    <button type="submit">Enviar relato</button>
-  </form>
-</section>
-```
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sobre a viagem</legend>
+
+          <label for="destino">Continente do destino</label>
+          <select id="destino" name="destino">
+            <option value="america-sul">América do Sul</option>
+            <option value="europa">Europa</option>
+            <option value="asia">Ásia</option>
+            <option value="africa">África</option>
+          </select>
+
+          <label for="dias">Duração da viagem (dias)</label>
+          <input type="number" id="dias" name="dias" min="1" max="90">
+
+          <label for="relato">Seu relato</label>
+          <textarea id="relato" name="relato" rows="4"></textarea>
+        </fieldset>
+
+        <button type="submit" class="botao">Enviar relato</button>
+      </form>
+    </section>
 
   </main>
 
@@ -110,5 +175,6 @@
     <p>&copy; 2026 Mapa Aberto</p>
   </footer>
 
+  <script src="js/media.js"></script>
 </body>
 </html>

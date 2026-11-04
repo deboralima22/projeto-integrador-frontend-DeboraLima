@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa Aberto - Prática Canvas e SVG</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f1ea;
+      color: #222;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    canvas {
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mapa Aberto — Prática HTML5 (Canvas e SVG)</h1>
+
+  <section>
+    <h2>Selo "Roteiro Completo" (SVG)</h2>
+
+    <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-labelledby="tituloSelo">
+      <title id="tituloSelo">Selo: Roteiro Completo</title>
+      <circle cx="60" cy="60" r="55" fill="#f4f1ea" stroke="#b6862f" stroke-width="3" />
+      <circle cx="60" cy="60" r="35" fill="#2f6e67" />
+      <text x="60" y="65" font-size="12" fill="#fff" text-anchor="middle">ROTEIRO</text>
+    </svg>
+
+    <p>Este selo aparece nos posts do blog que têm roteiro completo (hospedagem, custos e dicas).</p>
+  </section>
+
+  <section>
+    <h2>Nota média dos destinos por tipo (Canvas)</h2>
+
+    <canvas id="grafico" width="300" height="200" role="img" aria-label="Gráfico de nota média por tipo de destino: Praia, Montanha e Cidade">
+      <p>Nota média por tipo de destino: Praia 8.9, Montanha 9.2, Cidade 8.3.</p>
+    </canvas>
+
+    <p>O gráfico mostra a nota média que os viajantes dão para cada tipo de destino no blog.</p>
+  </section>
+
+  <script>
+    const canvas = document.getElementById('grafico');
+    const ctx = canvas.getContext('2d');
+
+    // dados: nota média x 10 (para virar altura em pixels)
+    const categorias = ['Praia', 'Montanha', 'Cidade'];
+    const notaFinal = [89, 92, 83];
+    const cores = ['#2f6e67', '#b8401f', '#b6862f'];
+
+    // altura atual de cada barra (começa em 0 e cresce até a nota final)
+    let alturaAtual = [0, 0, 0];
+
+    function desenhar() {
+      // limpa o canvas inteiro antes de redesenhar (senão fica um rastro)
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < categorias.length; i++) {
+        const x = 40 + i * 80;
+        const altura = alturaAtual[i];
+
+        ctx.fillStyle = cores[i];
+        ctx.fillRect(x, 170 - altura, 50, altura);
+
+        ctx.fillStyle = '#222';
+        ctx.font = '12px Arial';
+        ctx.fillText(categorias[i], x, 190);
+      }
+    }
+
+    function animar() {
+      let terminou = true;
+
+      for (let i = 0; i < categorias.length; i++) {
+        if (alturaAtual[i] < notaFinal[i]) {
+          alturaAtual[i] += 2;
+          terminou = false;
+        }
+      }
+
+      desenhar();
+
+      if (!terminou) {
+        requestAnimationFrame(animar);
+      }
+    }
+
+    animar();
+  </script>
+
+</body>
+</html>

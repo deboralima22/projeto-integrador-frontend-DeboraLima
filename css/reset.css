@@ -1,0 +1,15 @@
+/* AULA 6 - Etapa 1: reset básico */
+
+/* border-box global: width/height passam a incluir padding e border,
+   então nenhuma largura "estoura" visualmente. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margem e padding padrão do navegador no body */
+body {
+  margin: 0;
+  padding: 0;
+}

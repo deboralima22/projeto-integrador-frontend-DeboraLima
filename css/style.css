@@ -1,86 +1,272 @@
+/* ==========================================================
+   AULA 6 - Variáveis CSS (mínimo de 5 no :root)
+   Reutilizadas em cores, espaçamentos e bordas ao longo do arquivo.
+   ========================================================== */
+:root {
+  --cor-primaria: #2c6e6b;
+  --cor-destaque: #b6862f;
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #222222;
+  --cor-borda: #999999;
+  --espaco-p: 0.5rem;
+  --espaco-m: 1rem;
+  --espaco-g: 1.5rem;
+  --raio: 8px;
+}
+
+/* ==========================================================
+   Base
+   Todos os font-size usam rem (e não px) porque rem respeita
+   o tamanho de fonte configurado pelo usuário no navegador,
+   melhorando a acessibilidade e mantendo proporção em toda a página.
+   ========================================================== */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #222222;
-  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
 }
 
-header {
-  background-color: #2c6e6b;
-  color: white;
-  padding: 15px;
-}
-
-header nav a {
-  color: white;
-  margin-right: 15px;
-}
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.375rem; margin-top: var(--espaco-g); }
 
 main {
-  padding: 20px;
+  padding: var(--espaco-g);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-footer {
-  background-color: #2c6e6b;
+/* ==========================================================
+   AULA 6 - Seletor de ID (elemento único da página)
+   ========================================================== */
+#titulo-principal {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================
+   AULA 7 - Barra de navegação com Flexbox
+   ========================================================== */
+.topo {
+  background-color: var(--cor-primaria);
   color: white;
-  padding: 15px;
-  text-align: center;
+  padding: var(--espaco-m) var(--espaco-g);
+
+  display: flex;
+  justify-content: space-between; /* título à esquerda, menu à direita */
+  align-items: center;
+  flex-wrap: wrap;                /* quebra linha em telas pequenas */
+  gap: var(--espaco-m);
 }
 
-img {
-  width: 300px;
+/* AULA 6 - Combinador descendente (.menu a):
+   escolhido para estilizar somente os links DENTRO do menu,
+   sem precisar de uma classe em cada <a>. */
+.menu {
+  display: flex;
+  gap: var(--espaco-m);
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: var(--espaco-p) var(--espaco-m);
+  border-radius: var(--raio);
+}
+
+/* Estados interativos da navbar (hover para mouse, focus-visible para teclado) */
+.menu a:hover,
+.menu a:focus-visible {
+  background-color: var(--cor-destaque);
+  outline: 2px solid white;
+}
+
+/* ==========================================================
+   AULA 6 - Links no corpo da página: ordem LoVe/HAte
+   (link, visited, hover, active)
+   ========================================================== */
+main a:link    { color: var(--cor-primaria); }
+main a:visited { color: #6a4c93; }
+main a:hover   { color: var(--cor-destaque); text-decoration: none; }
+main a:active  { color: #b8401f; }
+
+/* ==========================================================
+   AULA 6 - Classes reutilizáveis (.card, .destaque, .botao)
+   ========================================================== */
+
+/* Box model explícito: padding + border + margin.
+   Confira no DevTools (aba Computed / box model). */
+.card {
+  background-color: white;
+  padding: var(--espaco-m);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  margin: var(--espaco-p);
+}
+
+.destaque {
+  border-color: var(--cor-destaque);
+  background-color: #fff8e6;
+}
+
+.botao {
+  display: inline-block;
+  padding: var(--espaco-p) var(--espaco-g);
+  background-color: var(--cor-primaria);
+  color: white;
+  border: 2px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+}
+
+/* ==========================================================
+   Imagem, lista e tabela (AULA 6, passo 8)
+   ========================================================== */
+.mapa {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: var(--espaco-m);
+}
+
+/* list-style-type adequado ao tema */
+ul {
+  list-style-type: square;
+  padding-left: var(--espaco-g);
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  margin-top: 10px;
+  margin-top: var(--espaco-m);
 }
 
 th, td {
-  border: 1px solid #999999;
-  padding: 8px;
+  border: 1px solid var(--cor-borda);
+  padding: var(--espaco-p) var(--espaco-m);
   text-align: left;
 }
 
 th {
-  background-color: #2c6e6b;
+  background-color: var(--cor-primaria);
   color: white;
 }
 
-fieldset {
-  margin-bottom: 15px;
-  padding: 10px;
+/* ==========================================================
+   AULA 7 - Grade responsiva com CSS Grid
+   repeat(auto-fit, minmax()) cria quantas colunas couberem,
+   sem precisar de media query.
+   ========================================================== */
+.grade-destinos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco-m);
+  list-style-type: none; /* remove os marcadores da <ul> da grade */
+  padding: 0;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
+.grade-destinos .card {
+  margin: 0;
+  /* AULA 7: animação de hover com transform (e não width/height)
+     porque transform não força o navegador a recalcular o layout
+     (sem reflow) e é mais fluida, pois roda na GPU. */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-input, select, textarea {
-  width: 100%;
-  padding: 5px;
-  margin-top: 3px;
+.grade-destinos .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-button {
-  margin-top: 15px;
-  padding: 8px 16px;
-  background-color: #2c6e6b;
-  color: white;
-  border: none;
+.grade-destinos .card h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
 }
+
+/* AULA 7 - Pseudo-classes estruturais */
+.grade-destinos .card:first-child h3 {     /* título do primeiro card em dourado */
+  color: var(--cor-destaque);
+}
+
+.grade-destinos .card:nth-child(even) {    /* cards pares com borda verde */
+  border-color: var(--cor-primaria);
+}
+
+.grade-destinos .card:last-child {         /* último card com borda tracejada */
+  border-style: dashed;
+}
+
+/* ==========================================================
+   Vídeo / mídia (AULA 4)
+   ========================================================== */
 .video-wrapper {
   position: relative;
   width: 100%;
   max-width: 640px;
   aspect-ratio: 16 / 9;
-  margin: 10px 0 20px;
+  margin: var(--espaco-m) 0 var(--espaco-g);
 }
 
 .video-wrapper iframe {
   width: 100%;
   height: 100%;
+  border: 0;
   border-radius: 6px;
+}
+
+.video-tour {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--raio);
+  background-color: black;
+}
+
+.aviso-formato {
+  display: block;
+  margin-top: var(--espaco-p);
+  font-size: 0.875rem;
+  color: #555555;
+}
+
+/* ==========================================================
+   Formulário
+   ========================================================== */
+fieldset {
+  margin-bottom: var(--espaco-m);
+  padding: var(--espaco-m);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+label {
+  display: block;
+  margin-top: var(--espaco-p);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: var(--espaco-p);
+  margin-top: 3px;
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   Rodapé
+   ========================================================== */
+footer {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: var(--espaco-m);
+  text-align: center;
 }

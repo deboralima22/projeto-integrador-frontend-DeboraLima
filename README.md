@@ -12,9 +12,31 @@ A proposta é ser um ponto de partida para quem está planejando a próxima viag
 
 O blog reúne relatos de viagem organizados por destino, com dicas práticas sobre hospedagem, alimentação e custos, além de roteiros sugeridos para diferentes perfis de viajante. A navegação entre os posts foi pensada para ser simples e direta.
 
+- Menu de navegação com Flexbox
+- Grade responsiva de destinos com CSS Grid
+- Seção de vídeo com fallback de formatos (WebM e MP4), poster e legendas
+- Formulário para o leitor contar a própria viagem
+
 ## Tecnologias utilizadas
 
-O projeto foi desenvolvido com HTML5 e CSS3.
+- HTML5 semântico (multimídia, formulário, tabela, SVG e Canvas)
+- CSS3 (variáveis, box model, Flexbox, Grid, pseudo-classes)
+- JavaScript básico (teste de formatos de vídeo com `canPlayType()`)
+
+## Estrutura de pastas
+
+```
+├── index.html
+├── pratica-canvas-svg-simples.html
+├── css/
+│   ├── reset.css
+│   └── style.css
+├── js/
+│   └── media.js
+└── assets/
+    ├── images/
+    └── media/
+```
 
 ## Como executar o projeto
 

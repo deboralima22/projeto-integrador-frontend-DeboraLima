@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa Aberto</title>
-  <!-- AULA 6: reset.css vem ANTES do style.css, para o style.css poder sobrescrever o reset -->
+  <!-- reset.css antes do style.css, para o style.css poder sobrescrever o reset -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- AULA 7: .topo (flex) = título + menu; .menu (flex) = links lado a lado -->
+  <!-- Cabeçalho: título + menu de navegação (flexbox) -->
   <header class="topo">
     <h1 id="titulo-principal">Mapa Aberto</h1>
     <nav class="menu" aria-label="Navegação principal">
@@ -70,7 +70,7 @@
 
     </section>
 
-    <!-- AULA 7: seção em CSS Grid com cards (primeiro, pares e último estilizados por pseudo-classes estruturais) -->
+    <!-- Roteiros em cards (CSS Grid) -->
     <section id="roteiros">
       <h2>Roteiros em cards</h2>
 
@@ -102,34 +102,22 @@
       </ul>
     </section>
 
-    <!-- AULA 4: seção de mídia (vídeo próprio com fallback de formatos) -->
     <section id="tour">
       <h2>Tour guiado pelo Mapa Aberto</h2>
 
-      <!--
-        preload="none": o vídeo está abaixo da dobra da página e o visitante
-        pode nem rolar até aqui. Com "none" o navegador NÃO baixa nada até o
-        clique em play (só carrega o poster), economizando dados e acelerando
-        o carregamento inicial. ("metadata" baixaria só duração/dimensões;
-        "auto" baixaria o vídeo inteiro de antemão.)
-
-        Ordem dos <source>: WebM/VP9 primeiro (melhor compressão = arquivo
-        menor), MP4/H.264 depois como fallback, pois é o formato com
-        compatibilidade quase universal. O navegador usa o PRIMEIRO que
-        conseguir reproduzir.
-      -->
+      <!-- Vídeo próprio: WebM primeiro (menor), MP4 como fallback. preload="none" evita baixar o vídeo antes do play. -->
       <video
         id="video-tour"
         class="video-tour"
         controls
         preload="none"
-        poster="assets/media/poster-tour.jpg"
+        poster="assets/images/media/poster-tour.jpg"
         width="640"
         height="360">
-        <source src="assets/media/tour-guiado.webm" type="video/webm; codecs=vp9">
-        <source src="assets/media/tour-guiado.mp4" type="video/mp4; codecs=avc1.42E01E">
-        <track kind="subtitles" src="assets/media/legendas-tour.vtt" srclang="pt-BR" label="Português" default>
-        <p>Seu navegador não suporta vídeo HTML5. <a href="assets/media/tour-guiado.mp4">Baixe o vídeo em MP4</a>.</p>
+        <source src="assets/images/media/tour-guiado.webm" type="video/webm; codecs=vp9">
+        <source src="assets/images/media/tour-guiado.mp4" type="video/mp4; codecs=avc1.42E01E">
+        <track kind="subtitles" src="assets/images/media/legendas-tour.vtt" srclang="pt-BR" label="Português" default>
+        <p>Seu navegador não suporta vídeo HTML5. <a href="assets/images/media/tour-guiado.mp4">Baixe o vídeo em MP4</a>.</p>
       </video>
     </section>
 

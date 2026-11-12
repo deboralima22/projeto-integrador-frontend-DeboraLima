@@ -16,12 +16,14 @@ O blog reúne relatos de viagem organizados por destino, com dicas práticas sob
 - Grade responsiva de destinos com CSS Grid
 - Seção de vídeo com fallback de formatos (WebM e MP4), poster e legendas
 - Formulário para o leitor contar a própria viagem
+- Análise de custos dos destinos em JavaScript: lógica no console (`js/logica.js`) e cards de custo na página, por faixa de preço (`js/script.js`)
 
 ## Tecnologias utilizadas
 
 - HTML5 semântico (multimídia, formulário, tabela, SVG e Canvas)
 - CSS3 (variáveis, box model, Flexbox, Grid, pseudo-classes)
 - JavaScript básico (teste de formatos de vídeo com `canPlayType()`)
+- JavaScript puro: variáveis, condicionais, laços, funções, `map`, `filter`, `reduce` e manipulação do DOM
 
 ## Estrutura de pastas
 
@@ -32,7 +34,9 @@ O blog reúne relatos de viagem organizados por destino, com dicas práticas sob
 │   ├── reset.css
 │   └── style.css
 ├── js/
-│   └── media.js
+│   ├── media.js
+│   ├── logica.js
+│   └── script.js
 └── assets/
     ├── images/
     └── media/
@@ -52,5 +56,3 @@ cd projeto-integrador-frontend-DeboraLima
 Projeto desenvolvido por Débora Lima como parte do Projeto Integrador da disciplina de Desenvolvimento Front-end para Web.
 
 GitHub: [@deboralima22](https://github.com/deboralima22)
-
-Revisão feita por William Silva no dia 27/08/2026 17h44: Débora cumpriu os requisitos propostos, com uma interface muito bonita, bem organizada e agradável de visualizar. O projeto apresenta uma boa aplicação dos conteúdos trabalhados em Front-end e uma proposta clara. 10/10

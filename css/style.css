@@ -239,9 +239,6 @@ th {
   color: #555555;
 }
 
-/* ==========================================================
-   Formulário
-   ========================================================== */
 fieldset {
   margin-bottom: var(--espaco-m);
   padding: var(--espaco-m);
@@ -261,12 +258,48 @@ input, select, textarea {
   font-size: 1rem;
 }
 
-/* ==========================================================
-   Rodapé
-   ========================================================== */
 footer {
   background-color: var(--cor-primaria);
   color: white;
   padding: var(--espaco-m);
   text-align: center;
+}
+
+.lista-custos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco-m);
+  list-style-type: none;
+  padding: 0;
+}
+
+.item-custo {
+  background-color: white;
+  padding: var(--espaco-m);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.item-custo h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+}
+
+.faixa-barato {
+  border-color: var(--cor-primaria);
+  background-color: #e6f2f1;
+}
+
+.faixa-moderado {
+  border-color: var(--cor-destaque);
+  background-color: #fff8e6;
+}
+
+.faixa-caro {
+  border-color: #b8401f;
+  background-color: #fbe9e4;
+}
+
+.resumo-custos {
+  font-weight: bold;
 }

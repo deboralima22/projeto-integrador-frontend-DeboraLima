@@ -53,16 +53,16 @@
     const canvas = document.getElementById('grafico');
     const ctx = canvas.getContext('2d');
 
-    // dados: nota média x 10 (para virar altura em pixels)
+    
     const categorias = ['Praia', 'Montanha', 'Cidade'];
     const notaFinal = [89, 92, 83];
     const cores = ['#2f6e67', '#b8401f', '#b6862f'];
 
-    // altura atual de cada barra (começa em 0 e cresce até a nota final)
+    
     let alturaAtual = [0, 0, 0];
 
     function desenhar() {
-      // limpa o canvas inteiro antes de redesenhar (senão fica um rastro)
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < categorias.length; i++) {

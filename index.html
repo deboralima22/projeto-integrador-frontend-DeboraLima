@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa Aberto</title>
-  <!-- reset.css antes do style.css, para o style.css poder sobrescrever o reset -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho: título + menu de navegação (flexbox) -->
+  
   <header class="topo">
     <h1 id="titulo-principal">Mapa Aberto</h1>
     <nav class="menu" aria-label="Navegação principal">
       <a href="#destinos">Destinos</a>
       <a href="#roteiros">Roteiros</a>
+      <a href="#resultado">Custos</a>
       <a href="#tour">Tour</a>
       <a href="#contribua">Contribua</a>
       <a href="pratica-canvas-svg-simples.html">Prática HTML5</a>
@@ -70,7 +70,7 @@
 
     </section>
 
-    <!-- Roteiros em cards (CSS Grid) -->
+    <!-- Roteiros em cards -->
     <section id="roteiros">
       <h2>Roteiros em cards</h2>
 
@@ -102,10 +102,14 @@
       </ul>
     </section>
 
+    <section id="resultado">
+      <h2>Quanto custa cada viagem</h2>
+      <p>Custo por dia vezes os dias sugeridos de cada roteiro, do mais barato ao mais caro.</p>
+    </section>
+
     <section id="tour">
       <h2>Tour guiado pelo Mapa Aberto</h2>
 
-      <!-- Vídeo próprio: WebM primeiro (menor), MP4 como fallback. preload="none" evita baixar o vídeo antes do play. -->
       <video
         id="video-tour"
         class="video-tour"
@@ -164,5 +168,7 @@
   </footer>
 
   <script src="js/media.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/logica.js" defer></script>
 </body>
 </html>
